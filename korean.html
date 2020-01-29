@@ -9,7 +9,7 @@
         /* Setting box */
         .sizing{
             margin: auto;
-            width: 90%;
+            width: 85%;
         }
 
         /* Logo */
@@ -22,20 +22,75 @@
             margin-bottom: 10px;
         }
 
-        /* location */
+        /******************* Food *******************/
+        /* Food Image */
+        .foodImg{
+            display: block;
+            width: 75%;
+            height: 50%;
+            max-width: 400px;
+            max-height: 200px;
+            padding: 0;
+            float: left;
+            border-radius: 15px;
+        }
+
+        /* Food Kinds */
+        .foodKinds{
+            position: relative;
+            left: 10%;
+        }
+        
+        /* hr */
+        .my-hr{
+            border: 0;
+            height: 3px;
+            background-color: rgb(221, 221, 221); 
+        }
+
+        /* restaurant name */
+        .name{
+            font-size: 20pt;
+        }
+
+        /* description */
+        .dept{
+            margin-left: 10px;
+        }
+        /*********************************************/
+
+
+        /******************* location *******************/
         .center{
             text-align: center;
-        }        
+        }
+        .left{
+            text-align: left;
+        }
+        .right{
+            text-align: right;
+        }
+        /*************************************************/
 
-        /* Font size */
+
+        /******************* Font size *******************/
         .ft10{
             font-size: 10px;
         }
         .ft15{
             font-size: 15px;
         }
+        .ft20{
+            font-size: 20px;
+        }
+        .ft25{
+            font-size: 25px;
+        }
+        .ft30{
+            font-size: 30px;
+        }
 
-        /******** Sementic elements ********/
+        /******************* Sementic elements *******************/
         header{
             width: 100%;
             height: 80px;
@@ -44,6 +99,15 @@
             background-color: rgb(182, 221, 243);
             border-top-right-radius: 10px;
             border-top-left-radius: 10px;
+        }
+
+        article{
+            margin-bottom: 30px;
+        }
+
+        section{
+            margin: 30px;
+            padding-top: 10px;
         }
 
         footer{
@@ -56,6 +120,11 @@
             border-bottom-left-radius: 10px;
             border-bottom-right-radius: 10px;
         }
+
+        p{
+            margin: 5px;
+        }
+        /********************************************************/
     </style>
 
 </head>
@@ -65,21 +134,103 @@
         <a href="./표지.html"><img class="playdata" src="playdata_logo.png" alt="playdata_logo"></a> 
     </header>
     <section class="sizing">
-        section
-        <article>
-            article1
+        <div class="ft30 foodKinds">한식</div>
+        <article class="ft10 right">
+            <a href="http://data.seocho.go.kr/openinf/sheetview.jsp?infId=OA-11064&tMenu=11">[출처] 열린데이터광장: 식품위생관리-서울시 서초구 모법음식점 지정 현황</a>
         </article>
-        <article>
-            article1
-        </article>
-        <article>
-            article1
-        </article>
+        
+        <!-- 봉산옥 -->
+        <section class="sizing" style="width: 70%;">
+            <table>
+                <tr>
+                    <td>
+                        <img class="foodImg" src="http://blogfiles.naver.net/MjAxODEyMTdfMjAz/MDAxNTQ1MDU0MTY3OTgw.1tmmeHfG45IgM3Fdl5WYK_M4aGVPcSR-Tv-cXD54z7gg.FEm64pS_kDAIfPwf8782zsGYtX75TqJ8cICsXOnx544g.PNG.3o037qwy45/image.png" alt="봉산옥">
+                    </td>
+                    <td>
+                        <span class="name">봉산옥</span>
+                        <p>📞 02-525-2282</p>
+                        <p>🚩서울 서초구 반포대로8길 5-6 <a href="https://v4.map.naver.com/?mapmode=0&lng=59f0d22b2d4830eb28339dd62767844b&pinId=11851001&lat=4e0a6bb4940642717f85a14666eee3af&dlevel=11&enc=b64&pinType=site">[지도보기]</a></p>
+                        <p>🕒 매일 11:00 - 22:00<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;준비시간 14:30 ~ 17:00<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;일요일 휴무</p>
+                        <p>🍴 봉산 만두국: 10,000원<br>
+                            &nbsp;&nbsp;&nbsp;묵밥, 양푼열무비빔밥, 알밥: 8,000원<br>
+                            &nbsp;&nbsp;&nbsp;오징어순대: 25,000원<br>
+                            &nbsp;&nbsp;&nbsp;김치말이국수, 열무회국수, 삯국수, 김치해장국: 9,000원<br>
+                            &nbsp;&nbsp;&nbsp;녹구빈대떡: 17,000원</p>
+                    </td>
+                </tr>
+            </table>
+            <hr class="my-hr">
+        </section>
+
+        <!-- 목천집 -->
+        <section class="sizing" style="width: 70%;">
+            <table>
+                <tr>
+                    <td>
+                        <a href="https://mokchonjib.modoo.at/"><img class="foodImg" src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxOTA3MTFfNzgg%2FMDAxNTYyODQ2NjE4NDcz.KNTjdBXINdMuKlVJhsFN5j1U8-4Fmw-BkllJgGJWX9Eg.TbkMED60nlheShoHNS-93AmWwvPppig6K05T458QemIg.JPEG.duckpc%2F20190711_3%25B8%25F1%25C3%25B5%25C1%25FD_%25C4%25AE%25B1%25B9%25BC%25F6_%25281%2529.jpg&type=b400" alt="목천집"></a>
+                    </td>
+                    <td>
+                        <span class="name">목천집</span>
+                        <p>📞02-525-8418</p>
+                        <p>🚩서울 서초구 효령로52길 69 <a href="https://v4.map.naver.com/?mapmode=0&lng=ddd19ae6fc29caeb2acdccb4b8b699fa&pinId=11679541&pinType=site&lat=3ccbdc2510c0c457d4401c0f092cf133&dlevel=11&enc=b64">[지도보기]</a></p>
+                        <p>🕒 매일 11:00 - 21:00<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;명절 휴무</p>
+                        <p>🍴 옛날 칼국수: 8,000원<br>
+                            &nbsp;&nbsp;&nbsp;팥 칼국수: 10,000원<br>
+                            &nbsp;&nbsp;&nbsp;매생이 칼국수: 9,000원<br>
+                            &nbsp;&nbsp;&nbsp;매생이 굴전: 20,000원<br>
+                            &nbsp;&nbsp;&nbsp;황호박전: 15,000원</p>
+                    </td>
+                </tr>
+            </table>
+            <hr class="my-hr">
+        </section>
+
+        <!-- 백년옥 -->
+        <section class="sizing" style="width: 70%;">
+            <table>
+                <tr>
+                    <td>
+                        <a href="http://baengnyeonok.modoo.at/"><img class="foodImg" src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxOTA5MjBfMTYx%2FMDAxNTY4OTQ0Mjk5MDQ5.iFc5eI-v4dimYuFHw8YJt3CnYcN-GTEoYjn0jKuBlw8g.vThrkI7WBK5KD8JgP8JnXUahcmEfI2jNZBKxKtq75vog.JPEG.cosmicidea%2F20190910_154744.jpg&type=b400" alt="백년옥"></a>
+                    </td>
+                    <td>
+                        <span class="name">백년옥</span>
+                        <p>📞02-523-2860</p>
+                        <p>🚩서울 서초구 남부순환로 2407 <a href="https://v4.map.naver.com/?mapmode=0&lng=1c0b5437eadd30c698b8a812b2e9aee8&pinId=11678686&pinType=site&lat=d8075f0234d72ebf82fbda0f881910f9&dlevel=11&enc=b64">[지도보기]</a></p>
+                        <p>🕒 평일 10:00 - 21:00<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;명절 휴무</p>
+                        <p>🍴 자연식 순두부: 10,000원<br>
+                            &nbsp;&nbsp;&nbsp;뚝배기 순두부: 10,000원<br>
+                            &nbsp;&nbsp;&nbsp;팥동지죽: 10,000원<br>
+                            &nbsp;&nbsp;&nbsp;팥칼국수: 10,000원<br>
+                            &nbsp;&nbsp;&nbsp;야채두부비빔밥: 10,000원</p>
+                    </td>
+                </tr>
+            </table>
+            <hr class="my-hr">
+        </section>
+
+        <!-- 장꼬방묵은김치찌개전문 -->
+        <section class="sizing" style="width: 70%;">
+            <table>
+                <tr>
+                    <td>
+                        <img class="foodImg" src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxOTA0MDFfMTk5%2FMDAxNTU0MTIzMTU2MzEw.4uUFDWpTDRdOH4Yu0510R-UtzqjEV45HrXyJIup3-04g._2vGDqq1XYFk77hhvrM0WGjsWAYXaDR0JCPUkUh69a4g.JPEG.bp10to70%2FP1090234.JPG&type=b400" alt="장꼬방묵은김치찌개전문">
+                    </td>
+                    <td>
+                        <span class="name">장꼬방묵은김치찌개전문</span>
+                        <p>📞02-522-0035</p>
+                        <p>🚩서울 서초구 효령로 364 <a href="https://v4.map.naver.com/?mapmode=0&lng=7dee4cb6773cf60f2375025d39c4f1939284977543108875e6a0e8e8a5a802d8&pinId=11819292&lat=d0ab45364c8b3880e377474ebacd3ff6cf77eeb01466d5e87de250edcf13d109&dlevel=11&enc=b64&pinType=site">[지도보기]</a></p>
+                        <p>🕒 매일 10:00 - 23:00</p>
+                        <p>🍴 장꼬방찌개: 8,000원<br>
+                            &nbsp;&nbsp;&nbsp;계란말이: 8,000원<br>
+                            &nbsp;&nbsp;&nbsp;장꼬방구이: 9,000원<br>
+                            &nbsp;&nbsp;&nbsp;장꼬방찌개(포장): 7,000원<br>
+                            &nbsp;&nbsp;&nbsp;계란말이(포장): 8,000원</p>
+                    </td>
+                </tr>
+            </table>
+        </section>
+        <button onclick="">추천받기</button>
     </section>
-    <!-- 한식집 결과: https://www.google.com/search?rlz=1C1CHBF_koUS876KR876&sxsrf=ACYBGNQyEN67kGaNWFq2gvUvfyZFd7jk7Q:1580193225381&q=%EB%82%A8%EB%B6%80%ED%84%B0%EB%AF%B8%EB%84%90+%ED%95%9C%EC%8B%9D%EC%A7%91&npsic=0&rflfq=1&rlha=0&rllag=37485465,127017415,33&tbm=lcl&ved=2ahUKEwjc_P--1qXnAhXWwosBHZkeA1EQjGp6BAgLEDw&tbs=lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u2!2m2!2m1!1e1!2m1!1e2!2m1!1e3!3sIAE,lf:1,lf_ui:9&rldoc=1#rlfi=hd:;si:;mv:[[37.4950285,127.02417390000001],[37.4803656,127.00793180000001]];tbs:lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u2!2m2!2m1!1e1!2m1!1e2!2m1!1e3!3sIAE,lf:1,lf_ui:9 -->
-    
-
-
 
     <!-- Footer -->
     <footer class="sizing ft10 center">
