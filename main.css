@@ -1,0 +1,119 @@
+/* Setting box */
+.sizing{
+    margin: auto;
+    width: 85%;
+}
+
+/* Logo */
+.playdata{
+    width: 140px;
+    height: 60px;
+    margin-top: 10px;
+    margin-left: 15px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+/******************* Food *******************/
+/* Food Image */
+.foodImg{
+    display: block;
+    width: 75%;
+    height: 50%;
+    max-width: 400px;
+    max-height: 200px;
+    padding: 0;
+    float: left;
+    border-radius: 15px;
+}
+
+/* Food Kinds */
+.foodKinds{
+    position: relative;
+    left: 10%;
+}
+
+/* hr */
+.my-hr{
+    border: 0;
+    height: 3px;
+    background-color: rgb(221, 221, 221); 
+}
+
+/* restaurant name */
+.name{
+    font-size: 20pt;
+}
+
+/* description */
+.dept{
+    margin-left: 10px;
+}
+/*********************************************/
+
+
+/******************* location *******************/
+.center{
+    text-align: center;
+}
+.left{
+    text-align: left;
+}
+.right{
+    text-align: right;
+}
+/*************************************************/
+
+
+/******************* Font size *******************/
+.ft10{
+    font-size: 10px;
+}
+.ft15{
+    font-size: 15px;
+}
+.ft20{
+    font-size: 20px;
+}
+.ft25{
+    font-size: 25px;
+}
+.ft30{
+    font-size: 30px;
+}
+
+/******************* Sementic elements *******************/
+header{
+    width: 100%;
+    height: 80px;
+    top: 0;
+    line-height: 80px;
+    background-color: rgb(182, 221, 243);
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+article{
+    margin-bottom: 30px;
+}
+
+section{
+    margin: 30px;
+    padding-top: 10px;
+}
+
+footer{
+    width: 100%;
+    height: 80px;
+    bottom: 0;
+    left: 0;
+    line-height: 80px;
+    background-color: rgb(170, 196, 211);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+p{
+    margin: 5px;
+}
+/********************************************************/
