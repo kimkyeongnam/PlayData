@@ -38,6 +38,13 @@
     border: 0;
     height: 3px;
     background-color: rgb(221, 221, 221); 
+    max-width: 85%;
+    margin: auto;
+}
+
+/* td */
+.my-td{
+    width: 50%;
 }
 
 /* restaurant name */
