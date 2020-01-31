@@ -1,41 +1,83 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width", initial-scale=1.0>
+    <meta name="viewport" content="width=device-width" , initial-scale=1.0>
     <meta http-equiv="X-UA-Compatible" content="chrome">
     <title>일식</title>
     <link rel="stylesheet" href="main.css">
 
 </head>
+
 <body>
     <!-- Header -->
     <header class="sizing">
-        <a href="./표지.html"><img class="playdata" src="playdata_logo.png" alt="playdata_logo"></a> 
+        <a href="./표지.html"><img class="playdata" src="playdata_logo.png" alt="playdata_logo"></a>
     </header>
     <section class="sizing">
         <div class="ft30 foodKinds">일식
             <button onclick="recommendFood()" class="btn">추천받기</button>
             <button onclick="cleaning()" class="btn">원래대로</button>
         </div>
-        
+
         <!-- 스시 36.5 -->
         <section class="sizing" style="width: 70%;" id="food_1">
             <table>
                 <tr>
                     <td>
-                        <img class="foodImg" src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMDAxMjRfMjk3%2FMDAxNTc5NzkyNjM3Mzg5.2KbIsFDvKhKbPb1WJPk047e2_radsQ8aWjhI34U4gZ0g.tXqJyM9MCTWDmx4AXl4HLTmNVqFYtyKbGTqLKc7awVcg.JPEG.goindol71%2FDSC05489.JPG&type=b400" alt="스시 36.5">
+                        <img class="foodImg" src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMDAxMjRfMjk3%2FMDAxNTc5NzkyNjM3Mzg5.2KbIsFDvKhKbPb1WJPk047e2_radsQ8aWjhI34U4gZ0g.tXqJyM9MCTWDmx4AXl4HLTmNVqFYtyKbGTqLKc7awVcg.JPEG.goindol71%2FDSC05489.JPG&type=b400"
+                            alt="스시 36.5">
                     </td>
                     <td>
                         <span class="name">스시 36.5</span>
                         <p>📞02-586-7001</p>
                         <p>🚩서울 서초구 효령로 307 <a href="https://v4.map.naver.com/?mapmode=0&lng=fec0347f15bd592d3d449473d837c767&pinId=1668793855&lat=4a43dc2b3b60070f1a81ba99965ea232657407547eeec6a9df0f2ad1f38c5b54&dlevel=11&enc=b64&pinType=site">[지도보기]</a></p>
                         <p>🕒 매일 11:30 - 22:00</p>
-                        <p>🍴 스시세트: 20,000원<br>
-                            &nbsp;&nbsp;&nbsp;한판스시: 30,000원<br>
-                            &nbsp;&nbsp;&nbsp;연어크림치즈롤: 10,000원<br>
-                            &nbsp;&nbsp;&nbsp;모듬튀김: 18,000원<br>
-                            &nbsp;&nbsp;&nbsp;전복술찜과 문어조림: 30,000원</p>
+                        <p>🍴 스시세트: 20,000원<br> &nbsp;&nbsp;&nbsp;한판스시: 30,000원<br> &nbsp;&nbsp;&nbsp;연어크림치즈롤: 10,000원<br> &nbsp;&nbsp;&nbsp;모듬튀김: 18,000원<br> &nbsp;&nbsp;&nbsp;전복술찜과 문어조림: 30,000원</p>
+                    </td>
+                    <td>
+                        <div id="map0" style="width:200px;height:200px;border-radius: 10%;"></div>
+
+                        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d395a79258e87d808ee857297c6df7cf&libraries=services"></script>
+                        <script>
+                            var mapContainer = document.getElementById('map0'), // 지도를 표시할 div 
+                                mapOption = {
+                                    center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+                                    level: 4 // 지도의 확대 레벨
+                                };
+
+                            // 지도를 생성합니다    
+                            var map0 = new kakao.maps.Map(mapContainer, mapOption);
+
+                            // 주소-좌표 변환 객체를 생성합니다
+                            var geocoder = new kakao.maps.services.Geocoder();
+
+                            // 주소로 좌표를 검색합니다
+                            geocoder.addressSearch('서울 서초구 효령로 307', function(result, status) {
+
+                                // 정상적으로 검색이 완료됐으면 
+                                if (status === kakao.maps.services.Status.OK) {
+
+                                    var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+
+                                    // 결과값으로 받은 위치를 마커로 표시합니다
+                                    var marker = new kakao.maps.Marker({
+                                        map: map0,
+                                        position: coords
+                                    });
+
+                                    // 인포윈도우로 장소에 대한 설명을 표시합니다
+                                    var infowindow = new kakao.maps.InfoWindow({
+                                        content: '<div style="width:150px;text-align:center;padding:6px 0;">스시 36.5</div>'
+                                    });
+                                    infowindow.open(map0, marker);
+
+                                    // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+                                    map0.setCenter(coords);
+                                }
+                            });
+                        </script>
                     </td>
                 </tr>
             </table>
@@ -53,8 +95,50 @@
                         <p>📞02-522-5188</p>
                         <p>🚩서울 서초구 서초중앙로 42 <a href="https://v4.map.naver.com/?mapmode=0&lng=579284b756b173cbbf52293e3967c415&pinId=1520599065&lat=0bcc43a37335838463f94aad4bed0ca0&dlevel=11&enc=b64&pinType=site">[지도보기]</a></p>
                         <p>🕒 평일 11:00 - 22:30<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;주말 11:30 - 22:00<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Break Time 15:00 - 17:00</p>
-                        <p>🍴 스키야끼수: 32,000원<br>
-                            &nbsp;&nbsp;&nbsp;밀푀유나베: 29,000원</p>
+                        <p>🍴 스키야끼수: 32,000원<br> &nbsp;&nbsp;&nbsp;밀푀유나베: 29,000원</p>
+                    </td>
+                    <td>
+                        <div id="map1" style="width:200px;height:200px;border-radius: 10%;"></div>
+
+                        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d395a79258e87d808ee857297c6df7cf&libraries=services"></script>
+                        <script>
+                            var mapContainer = document.getElementById('map1'), // 지도를 표시할 div 
+                                mapOption = {
+                                    center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+                                    level: 4 // 지도의 확대 레벨
+                                };
+
+                            // 지도를 생성합니다    
+                            var map1 = new kakao.maps.Map(mapContainer, mapOption);
+
+                            // 주소-좌표 변환 객체를 생성합니다
+                            var geocoder = new kakao.maps.services.Geocoder();
+
+                            // 주소로 좌표를 검색합니다
+                            geocoder.addressSearch('서울 서초구 서초중앙로 42', function(result, status) {
+
+                                // 정상적으로 검색이 완료됐으면 
+                                if (status === kakao.maps.services.Status.OK) {
+
+                                    var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+
+                                    // 결과값으로 받은 위치를 마커로 표시합니다
+                                    var marker = new kakao.maps.Marker({
+                                        map: map1,
+                                        position: coords
+                                    });
+
+                                    // 인포윈도우로 장소에 대한 설명을 표시합니다
+                                    var infowindow = new kakao.maps.InfoWindow({
+                                        content: '<div style="width:150px;text-align:center;padding:6px 0;">스시나베</div>'
+                                    });
+                                    infowindow.open(map1, marker);
+
+                                    // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+                                    map1.setCenter(coords);
+                                }
+                            });
+                        </script>
                     </td>
                 </tr>
             </table>
@@ -72,11 +156,50 @@
                         <p>📞02-574-2201</p>
                         <p>🚩서울 서초구 반포대로10길 35<a href="https://v4.map.naver.com/?mapmode=0&pinId=1982481923&pinType=site&lng=cc4f9a16b03b8d717c7f7a49c3c82788&lat=58deffaa5e6bf655c04997dc0dd1640b&dlevel=11&enc=b64">[지도보기]</a></p>
                         <p>🕒 매일 11:30 - 22:00<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;월요일 휴무</p>
-                        <p>🍴 모듬초잡(11ps): 15,000원<br>
-                            &nbsp;&nbsp;&nbsp;특초밥(12ps): 14,500원<br>
-                            &nbsp;&nbsp;&nbsp;뱅초밥(12ps): 19,000원<br>
-                            &nbsp;&nbsp;&nbsp;연어초밥(12ps): 17,000원<br>
-                            &nbsp;&nbsp;&nbsp;참치초밥(12ps): 23,000원</p>
+                        <p>🍴 모듬초잡(11ps): 15,000원<br> &nbsp;&nbsp;&nbsp;특초밥(12ps): 14,500원<br> &nbsp;&nbsp;&nbsp;뱅초밥(12ps): 19,000원<br> &nbsp;&nbsp;&nbsp;연어초밥(12ps): 17,000원<br> &nbsp;&nbsp;&nbsp;참치초밥(12ps): 23,000원</p>
+                    </td>
+                    <td>
+                        <div id="map2" style="width:200px;height:200px;border-radius: 10%;"></div>
+
+                        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d395a79258e87d808ee857297c6df7cf&libraries=services"></script>
+                        <script>
+                            var mapContainer = document.getElementById('map2'), // 지도를 표시할 div 
+                                mapOption = {
+                                    center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+                                    level: 4 // 지도의 확대 레벨
+                                };
+
+                            // 지도를 생성합니다    
+                            var map2 = new kakao.maps.Map(mapContainer, mapOption);
+
+                            // 주소-좌표 변환 객체를 생성합니다
+                            var geocoder = new kakao.maps.services.Geocoder();
+
+                            // 주소로 좌표를 검색합니다
+                            geocoder.addressSearch('서울 서초구 반포대로10길 35', function(result, status) {
+
+                                // 정상적으로 검색이 완료됐으면 
+                                if (status === kakao.maps.services.Status.OK) {
+
+                                    var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+
+                                    // 결과값으로 받은 위치를 마커로 표시합니다
+                                    var marker = new kakao.maps.Marker({
+                                        map: map2,
+                                        position: coords
+                                    });
+
+                                    // 인포윈도우로 장소에 대한 설명을 표시합니다
+                                    var infowindow = new kakao.maps.InfoWindow({
+                                        content: '<div style="width:150px;text-align:center;padding:6px 0;">뱅스시</div>'
+                                    });
+                                    infowindow.open(map2, marker);
+
+                                    // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+                                    map2.setCenter(coords);
+                                }
+                            });
+                        </script>
                     </td>
                 </tr>
             </table>
@@ -93,34 +216,70 @@
                         <span class="name">오우치</span>
                         <p>📞02-6013-8545</p>
                         <p>🚩서울 서초구 효령로 266 <a href="https://v4.map.naver.com/?mapmode=0&lng=934e5e6cf36ee03fb243f1df71a32eab&pinId=1344897630&lat=dd0d94e190cc392c7e09a2c4477f310b&dlevel=11&enc=b64&pinType=site">[지도보기]</a></p>
-                        <p>🕒&nbsp;&nbsp; 평일 17:00 - 24:00 &nbsp;| Last order  - 23:00<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;토요일 17:00 - 24:00 | Last order  - 23:00<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;일요일 17:00 - 23:00 | Last order  - 22:00<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;공휴일 17:00 - 23:00 | Last order  - 22:00
+                        <p>🕒&nbsp;&nbsp; 평일 17:00 - 24:00 &nbsp;| Last order - 23:00<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;토요일 17:00 - 24:00 | Last order - 23:00<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;일요일 17:00 - 23:00 | Last order - 22:00<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;공휴일
+                            17:00 - 23:00 | Last order - 22:00
                         </p>
-                        <p>🍴 양살치살(호주산) 150g: 25,000원<br>
-                            &nbsp;&nbsp;&nbsp;양등심(호주산) 150g: 24,000원<br>
-                            &nbsp;&nbsp;&nbsp;양갈비(호주산) 200g: 27,000원<br>
-                            &nbsp;&nbsp;&nbsp;타마고밥: 2,000원<br>
-                            &nbsp;&nbsp;&nbsp;냉모밀: 3,000원</p>
+                        <p>🍴 양살치살(호주산) 150g: 25,000원<br> &nbsp;&nbsp;&nbsp;양등심(호주산) 150g: 24,000원<br> &nbsp;&nbsp;&nbsp;양갈비(호주산) 200g: 27,000원<br> &nbsp;&nbsp;&nbsp;타마고밥: 2,000원<br> &nbsp;&nbsp;&nbsp;냉모밀: 3,000원</p>
+                    </td>
+                    <td>
+                        <div id="map3" style="width:200px;height:200px;border-radius: 10%;"></div>
+
+                        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d395a79258e87d808ee857297c6df7cf&libraries=services"></script>
+                        <script>
+                            var mapContainer = document.getElementById('map3'), // 지도를 표시할 div 
+                                mapOption = {
+                                    center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+                                    level: 4 // 지도의 확대 레벨
+                                };
+
+                            // 지도를 생성합니다    
+                            var map3 = new kakao.maps.Map(mapContainer, mapOption);
+
+                            // 주소-좌표 변환 객체를 생성합니다
+                            var geocoder = new kakao.maps.services.Geocoder();
+
+                            // 주소로 좌표를 검색합니다
+                            geocoder.addressSearch('서울 서초구 효령로 266', function(result, status) {
+
+                                // 정상적으로 검색이 완료됐으면 
+                                if (status === kakao.maps.services.Status.OK) {
+
+                                    var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+
+                                    // 결과값으로 받은 위치를 마커로 표시합니다
+                                    var marker = new kakao.maps.Marker({
+                                        map: map3,
+                                        position: coords
+                                    });
+
+                                    // 인포윈도우로 장소에 대한 설명을 표시합니다
+                                    var infowindow = new kakao.maps.InfoWindow({
+                                        content: '<div style="width:150px;text-align:center;padding:6px 0;">오우치</div>'
+                                    });
+                                    infowindow.open(map3, marker);
+
+                                    // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+                                    map3.setCenter(coords);
+                                }
+                            });
+                        </script>
                     </td>
                 </tr>
             </table>
         </section>
     </section>
-    
+
     <article class="sizing ft10 right">
         <a href="http://data.seocho.go.kr/openinf/sheetview.jsp?infId=OA-11064&tMenu=11">[출처] 열린데이터광장: 식품위생관리-서울시 서초구 모법음식점 지정 현황</a>
     </article>
-    
+
     <!-- Footer -->
     <footer class="sizing ft10 center copyright">
-        © 2020 Copyright,
-        Made by <a href="https://github.com/kimkyeongnam" target="_blank"> 김경남</a> & 
+        © 2020 Copyright, Made by <a href="https://github.com/kimkyeongnam" target="_blank"> 김경남</a> &
         <a href="https://github.com/khg08071" target="_blank"> 김형규</a>
         <p><a href="https://github.com/kimkyeongnam/PlayData"><button class="github-btn" style="margin-top: 5px;">Let's go Github 🎓</button></a></p>
-    </footer>    
-    <script src="./main.js"></script> 
+    </footer>
+    <script src="./main.js"></script>
 </body>
 
 </html>
