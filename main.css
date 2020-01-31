@@ -14,6 +14,49 @@
     margin-bottom: 10px;
 }
 
+/* Github Button */
+.github-btn{
+    width: 150px;
+    height: 40px;
+    background-color: rgb(126, 126, 128);
+    color: white;
+    border-radius: 5px;
+    display: inline-block;
+    border-style: double;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Copyright */
+.copyright{
+    padding-top: 20px;
+}
+
+/*  */
+.btn {
+    display: inline-block;
+    margin-left: 15px;
+    padding: 10px 20px;
+    font-size: 15px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 3px #999;
+  }
+  
+  .btn:hover {background-color: #3e8e41}
+  
+  .btn:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+
 /******************* Food *******************/
 /* Food Image */
 .foodImg{
@@ -56,7 +99,11 @@
 .dept{
     margin-left: 10px;
 }
-/*********************************************/
+
+
+
+
+
 
 
 /******************* location *******************/
@@ -69,7 +116,11 @@
 .right{
     text-align: right;
 }
-/*************************************************/
+
+
+
+
+
 
 
 /******************* Font size *******************/
@@ -89,12 +140,17 @@
     font-size: 30px;
 }
 
+
+
+
+
+
+
 /******************* Sementic elements *******************/
 header{
     width: 100%;
     height: 80px;
     top: 0;
-    line-height: 80px;
     background-color: rgb(182, 221, 243);
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
@@ -102,11 +158,11 @@ header{
 
 article{
     margin-bottom: 30px;
+    padding-bottom: 30px;
 }
 
 section{
-    margin: 30px;
-    padding-top: 10px;
+    padding: 30px;
 }
 
 footer{
@@ -114,7 +170,6 @@ footer{
     height: 80px;
     bottom: 0;
     left: 0;
-    line-height: 80px;
     background-color: rgb(170, 196, 211);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -123,4 +178,3 @@ footer{
 p{
     margin: 5px;
 }
-/********************************************************/

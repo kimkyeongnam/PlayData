@@ -14,14 +14,14 @@
         <a href="./표지.html"><img class="playdata" src="playdata_logo.png" alt="playdata_logo"></a> 
     </header>
     <section class="sizing">
-        <div class="ft30 foodKinds">한식</div>
-        <article class="ft10 right">
-            <a href="http://data.seocho.go.kr/openinf/sheetview.jsp?infId=OA-11064&tMenu=11">[출처] 열린데이터광장: 식품위생관리-서울시 서초구 모법음식점 지정 현황</a>
-        </article>
+        <div class="ft30 foodKinds">한식
+            <button onclick="recommendFood()" class="btn">추천받기</button>
+            <button onclick="cleaning()" class="btn">원래대로</button>
+        </div>
         
         <!-- 봉산옥 -->
-        <section class="sizing" style="width: 70%;">
-            <table id="food_1">
+        <section class="sizing" style="width: 70%;" id="food_1">
+            <table>
                 <tr>
                     <td>
                         <img class="foodImg" src="http://blogfiles.naver.net/MjAxODEyMTdfMjAz/MDAxNTQ1MDU0MTY3OTgw.1tmmeHfG45IgM3Fdl5WYK_M4aGVPcSR-Tv-cXD54z7gg.FEm64pS_kDAIfPwf8782zsGYtX75TqJ8cICsXOnx544g.PNG.3o037qwy45/image.png" alt="봉산옥">
@@ -39,12 +39,11 @@
                     </td>
                 </tr>
             </table>
-            <hr class="my-hr">
         </section>
 
         <!-- 목천집 -->
-        <section class="sizing" style="width: 70%;">
-            <table id="food_2">
+        <section class="sizing" style="width: 70%;" id="food_2">
+            <table>
                 <tr>
                     <td>
                         <a href="https://mokchonjib.modoo.at/"><img class="foodImg" src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxOTA3MTFfNzgg%2FMDAxNTYyODQ2NjE4NDcz.KNTjdBXINdMuKlVJhsFN5j1U8-4Fmw-BkllJgGJWX9Eg.TbkMED60nlheShoHNS-93AmWwvPppig6K05T458QemIg.JPEG.duckpc%2F20190711_3%25B8%25F1%25C3%25B5%25C1%25FD_%25C4%25AE%25B1%25B9%25BC%25F6_%25281%2529.jpg&type=b400" alt="목천집"></a>
@@ -62,12 +61,11 @@
                     </td>
                 </tr>
             </table>
-            <hr class="my-hr">
         </section>
 
         <!-- 백년옥 -->
-        <section class="sizing" style="width: 70%;">
-            <table id="food_3">
+        <section class="sizing" style="width: 70%;" id="food_3">
+            <table>
                 <tr>
                     <td>
                         <a href="http://baengnyeonok.modoo.at/"><img class="foodImg" src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxOTA5MjBfMTYx%2FMDAxNTY4OTQ0Mjk5MDQ5.iFc5eI-v4dimYuFHw8YJt3CnYcN-GTEoYjn0jKuBlw8g.vThrkI7WBK5KD8JgP8JnXUahcmEfI2jNZBKxKtq75vog.JPEG.cosmicidea%2F20190910_154744.jpg&type=b400" alt="백년옥"></a>
@@ -85,12 +83,11 @@
                     </td>
                 </tr>
             </table>
-            <hr class="my-hr">
         </section>
 
         <!-- 장꼬방묵은김치찌개전문 -->
-        <section class="sizing" style="width: 70%;">
-            <table id="food_4">
+        <section class="sizing" style="width: 70%;" id="food_4">
+            <table>
                 <tr>
                     <td>
                         <img class="foodImg" src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxOTA0MDFfMTk5%2FMDAxNTU0MTIzMTU2MzEw.4uUFDWpTDRdOH4Yu0510R-UtzqjEV45HrXyJIup3-04g._2vGDqq1XYFk77hhvrM0WGjsWAYXaDR0JCPUkUh69a4g.JPEG.bp10to70%2FP1090234.JPG&type=b400" alt="장꼬방묵은김치찌개전문">
@@ -109,16 +106,17 @@
                 </tr>
             </table>
         </section>
-        <button onclick="recommendFood()">추천받기</button>
-        <button onclick="cleaning()">원래대로</button>
     </section>
-
+    
+    <article class="sizing ft10 right">
+        <a href="http://data.seocho.go.kr/openinf/sheetview.jsp?infId=OA-11064&tMenu=11">[출처] 열린데이터광장: 식품위생관리-서울시 서초구 모법음식점 지정 현황</a>
+    </article>
     <!-- Footer -->
-    <footer class="sizing ft10 center">
+    <footer class="sizing ft10 center copyright">
         © 2020 Copyright,
         Made by <a href="https://github.com/kimkyeongnam" target="_blank"> 김경남</a> & 
         <a href="https://github.com/khg08071" target="_blank"> 김형규</a>
-         
+        <p><a href="https://github.com/kimkyeongnam/PlayData"><button class="github-btn" style="margin-top: 5px;">Let's go Github 🎓</button></a></p>
     </footer>    
     <script src="./main.js"></script> 
 </body>
