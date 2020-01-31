@@ -4,6 +4,8 @@
 }
 
 .top {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     padding-top: 110px;
     padding-bottom: 30px;
     height: 300px;
