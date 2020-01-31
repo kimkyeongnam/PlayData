@@ -61,12 +61,11 @@
 /* Food Image */
 .foodImg{
     display: block;
-    width: 75%;
+    width: 100%;
     height: 50%;
-    max-width: 400px;
+    max-width: 500px;
     max-height: 200px;
     padding: 0;
-    float: left;
     border-radius: 15px;
 }
 
