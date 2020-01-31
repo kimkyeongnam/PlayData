@@ -12,8 +12,8 @@ function recommendFood(){
 }
 
 function cleaning(){
-    document.getElementById("food_1").style.backgroundColor = "FFFFFF";
-    document.getElementById("food_2").style.backgroundColor = "FFFFFF";
-    document.getElementById("food_3").style.backgroundColor = "FFFFFF";
-    document.getElementById("food_4").style.backgroundColor = "FFFFFF";
+    document.getElementById("food_1").style.backgroundColor = "white";
+    document.getElementById("food_2").style.backgroundColor = "white";
+    document.getElementById("food_3").style.backgroundColor = "white";
+    document.getElementById("food_4").style.backgroundColor = "white";
 }
