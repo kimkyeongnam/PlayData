@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width", initial-scale=1.0>
     <meta http-equiv="X-UA-Compatible" content="chrome">
-    <title>한식</title>
+    <title>양식</title>
     <link rel="stylesheet" href="main.css">
 
 </head>
@@ -14,111 +14,107 @@
         <a href="./표지.html"><img class="playdata" src="playdata_logo.png" alt="playdata_logo"></a> 
     </header>
     <section class="sizing">
-        <div class="ft30 foodKinds">한식</div>
-        <article class="ft10 right">
+        <div class="ft30 foodKinds">양식
+            <button onclick="recommendFood()" class="btn">추천받기</button>
+            <button onclick="cleaning()" class="btn">원래대로</button>
+        </div>
+        
+        <!-- 오프레 -->
+        <section class="sizing" style="width: 70%;" id="food_1">
+            <table>
+                <tr>
+                    <td>
+                        <img class="foodImg" style="transform: scale(1);" src="https://lh3.googleusercontent.com/proxy/hT3rQYZHzlJCBuy4FUCSNrFN9p-HYYWMwYFTcyupJNaPom7rhmOgV7y1naXNhQECete7gBbJBVv7uMO9aZ_wquZmpDZNwqR-Vp1c8o81NpunRpLhPiwwZxCogXpenNNN2E04v90lmre0fw_gWnGq-yvUVTfMSsC0udg7tXnj" alt="오프레">
+                    </td>
+                    <td>
+                        <span class="name">오프레</span>
+                        <p>📞010-9081-3837</p>
+                        <p>🚩서울 서초구 반포대로4길 12 <a href="https://v4.map.naver.com/?mapmode=0&lng=c7b856937bafdd640c17b14a221cc6e549bf51c2bceffade43d1b5bb6034d0c7&pinId=36061064&lat=e59a81232619807660d6b28fc172328dcf77eeb01466d5e87de250edcf13d109&dlevel=11&enc=b64&pinType=site">[지도보기]</a></p>
+                        <p>🕒 매일 12:00 - 22:00<br>&nbsp;&nbsp;&nbsp;&nbsp; Break time 15:00 - 18:00<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;월요일 휴무</p>
+                        <p>🍴 런치코스: 63,000원<br>
+                            &nbsp;&nbsp;&nbsp;디너코스: 138,000원</p>
+                    </td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- 심빠띠아 -->
+        <section class="sizing" style="width: 70%;" id="food_2">
+            <table>
+                <tr>
+                    <td>
+                        <a href="http://www.simpatia.kr/"><img class="foodImg" src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxOTA2MDRfMTYy%2FMDAxNTU5NjMzNDUyODky.8p4pxjkq4pXokukT3qhVwHxLckyQgcc-iCRbEoZwruUg.MvC4ds-oK1Ht2r7SYWQMbfSTLNq6TukOUzlVLnaT4Hwg.JPEG.glass-garden%2F20190604120402_IMG_0022.JPG&type=b400" alt="심빠띠아"></a>
+                    </td>
+                    <td>
+                        <span class="name">심빠띠아</span>
+                        <p>📞02-3474-6655</p>
+                        <p>🚩서울 서초구 반포대로16길 30 <a href="https://v4.map.naver.com/?mapmode=0&lng=4c57d350b433fdf19f5cfa2016be04a3&pinId=36395044&pinType=site&lat=4221050ae50a1837919d8b5e61cbbbd9&dlevel=11&enc=b64">[지도보기]</a></p>
+                        <p>🕒 평일 11:30 - 22:30<br>&nbsp;&nbsp;&nbsp;&nbsp; 주말 11:30 - 22:00<br>&nbsp;&nbsp;&nbsp;&nbsp; Break time 15:30 - 16:30<br>&nbsp;&nbsp;&nbsp;&nbsp; 일요일 휴무</p>
+                        <p>🍴 까르보나라: 17,000원<br>
+                            &nbsp;&nbsp;&nbsp;아라비아따: 17,000원<br>
+                            &nbsp;&nbsp;&nbsp;크림디아볼라: 20,000원<br>
+                            &nbsp;&nbsp;&nbsp;봉골레 파스타: 19,000원<br>
+                            &nbsp;&nbsp;&nbsp;고르곤졸라 피자: 20,000원</p>
+                    </td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- 라칼라스 -->
+        <section class="sizing" style="width: 70%;" id="food_3">
+            <table>
+                <tr>
+                    <td>
+                        <img class="foodImg" src="http://blogfiles.naver.net/MjAxNzA3MjVfMjk5/MDAxNTAwOTIxNzU2NDQy.VOY333vj4EgXK-zMFNBNZvWNKCizm1BxJrcQYpIj-Ysg.IVA1h13qouwokY2iTUYoIfy319ETDynj1opX9SRKLtsg.JPEG.jang_s2/IMG_0186.jpg" alt="라칼라스">
+                    </td>
+                    <td>
+                        <span class="name">라칼라스</span>
+                        <p>📞02-521-3325</p>
+                        <p>🚩서울 서초구 반포대로 8 <a href="https://v4.map.naver.com/?mapmode=0&lng=32be05d711b145dd5888075096f7563f9284977543108875e6a0e8e8a5a802d8&pinId=37086581&lat=c62db68b7576f7c2409946c5282ff0e4&dlevel=11&enc=b64&pinType=site">[지도보기]</a></p>
+                        <p>🕒 매일 11:00 - 24:00</p>
+                        <p>🍴 마르게리따 피자: 18,000원<br>
+                            &nbsp;&nbsp;&nbsp;샐러드류: 18,000~20,000원<br>
+                            &nbsp;&nbsp;&nbsp;마레 파스타: 20,000원<br>
+                            &nbsp;&nbsp;&nbsp;연어 아스파라거스: 19,000원<br>
+                            &nbsp;&nbsp;&nbsp;까르보나라: 19,000원</p>
+                    </td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- 하일아트레스토랑 -->
+        <section class="sizing" style="width: 70%;" id="food_4">
+            <table>
+                <tr>
+                    <td>
+                        <a href="http://hailartrestaurant.modoo.at/"><img class="foodImg" src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxODA0MjJfMTQz%2FMDAxNTI0NDA1MjA3NTky.ZrjNJR9NCKWkiScU2zgdWZ5syDEYxbVyB0i_6C-0MCYg.0hWeukA5zA__Li7IYkSKPq9qYp1X8-BCCPA_8ru-Bq8g.JPEG.baby100100%2FattachImage_2880958879.jpeg&type=b400" alt="하일아트레스토랑"></a>
+                    </td>
+                    <td>
+                        <span class="name">하일아트레스토랑</span>
+                        <p>📞02-3471-1727</p>
+                        <p>🚩서울 서초구 반포대로4길 54 <a href="https://v4.map.naver.com/?mapmode=0&lng=eb2f46dc49c6f7c9ede0e16317d6a7597defdf432d5fa6c24f028e8cd18fb974&pinId=11845261&pinType=site&lat=a44d76b7d9ad8b395fa6cfaca86f363d49bf51c2bceffade43d1b5bb6034d0c7&dlevel=11&enc=b64">[지도보기]</a></p>
+                        <p>🕒 매일 11:30 - 22:00<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Break time 15:00 - 16:00(음료만 주문가능)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;일요일 휴무</p>
+                        <p>🍴 명란 파스타: 18,000원<br>
+                            &nbsp;&nbsp;&nbsp;마르게리따 피자: 17,000원<br>
+                            &nbsp;&nbsp;&nbsp;등심 스테이크: 35,000원<br>
+                            &nbsp;&nbsp;&nbsp;안심 스테이크: 49,000원<br>
+                            &nbsp;&nbsp;&nbsp;[런치메뉴] 함박스테이크: 12,000원</p>
+                    </td>
+                </tr>
+            </table>
+        </section>
+        <article class="sizing ft10 right">
             <a href="http://data.seocho.go.kr/openinf/sheetview.jsp?infId=OA-11064&tMenu=11">[출처] 열린데이터광장: 식품위생관리-서울시 서초구 모법음식점 지정 현황</a>
         </article>
         
-        <!-- 봉산옥 -->
-        <section class="sizing" style="width: 70%;">
-            <table>
-                <tr>
-                    <td>
-                        <img class="foodImg" src="http://blogfiles.naver.net/MjAxODEyMTdfMjAz/MDAxNTQ1MDU0MTY3OTgw.1tmmeHfG45IgM3Fdl5WYK_M4aGVPcSR-Tv-cXD54z7gg.FEm64pS_kDAIfPwf8782zsGYtX75TqJ8cICsXOnx544g.PNG.3o037qwy45/image.png" alt="봉산옥">
-                    </td>
-                    <td>
-                        <span class="name">봉산옥</span>
-                        <p>📞 02-525-2282</p>
-                        <p>🚩서울 서초구 반포대로8길 5-6 <a href="https://v4.map.naver.com/?mapmode=0&lng=59f0d22b2d4830eb28339dd62767844b&pinId=11851001&lat=4e0a6bb4940642717f85a14666eee3af&dlevel=11&enc=b64&pinType=site">[지도보기]</a></p>
-                        <p>🕒 매일 11:00 - 22:00<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;준비시간 14:30 ~ 17:00<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;일요일 휴무</p>
-                        <p>🍴 봉산 만두국: 10,000원<br>
-                            &nbsp;&nbsp;&nbsp;묵밥, 양푼열무비빔밥, 알밥: 8,000원<br>
-                            &nbsp;&nbsp;&nbsp;오징어순대: 25,000원<br>
-                            &nbsp;&nbsp;&nbsp;김치말이국수, 열무회국수, 삯국수, 김치해장국: 9,000원<br>
-                            &nbsp;&nbsp;&nbsp;녹구빈대떡: 17,000원</p>
-                    </td>
-                </tr>
-            </table>
-            <hr class="my-hr">
-        </section>
-
-        <!-- 목천집 -->
-        <section class="sizing" style="width: 70%;">
-            <table>
-                <tr>
-                    <td>
-                        <a href="https://mokchonjib.modoo.at/"><img class="foodImg" src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxOTA3MTFfNzgg%2FMDAxNTYyODQ2NjE4NDcz.KNTjdBXINdMuKlVJhsFN5j1U8-4Fmw-BkllJgGJWX9Eg.TbkMED60nlheShoHNS-93AmWwvPppig6K05T458QemIg.JPEG.duckpc%2F20190711_3%25B8%25F1%25C3%25B5%25C1%25FD_%25C4%25AE%25B1%25B9%25BC%25F6_%25281%2529.jpg&type=b400" alt="목천집"></a>
-                    </td>
-                    <td>
-                        <span class="name">목천집</span>
-                        <p>📞02-525-8418</p>
-                        <p>🚩서울 서초구 효령로52길 69 <a href="https://v4.map.naver.com/?mapmode=0&lng=ddd19ae6fc29caeb2acdccb4b8b699fa&pinId=11679541&pinType=site&lat=3ccbdc2510c0c457d4401c0f092cf133&dlevel=11&enc=b64">[지도보기]</a></p>
-                        <p>🕒 매일 11:00 - 21:00<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;명절 휴무</p>
-                        <p>🍴 옛날 칼국수: 8,000원<br>
-                            &nbsp;&nbsp;&nbsp;팥 칼국수: 10,000원<br>
-                            &nbsp;&nbsp;&nbsp;매생이 칼국수: 9,000원<br>
-                            &nbsp;&nbsp;&nbsp;매생이 굴전: 20,000원<br>
-                            &nbsp;&nbsp;&nbsp;황호박전: 15,000원</p>
-                    </td>
-                </tr>
-            </table>
-            <hr class="my-hr">
-        </section>
-
-        <!-- 백년옥 -->
-        <section class="sizing" style="width: 70%;">
-            <table>
-                <tr>
-                    <td>
-                        <a href="http://baengnyeonok.modoo.at/"><img class="foodImg" src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxOTA5MjBfMTYx%2FMDAxNTY4OTQ0Mjk5MDQ5.iFc5eI-v4dimYuFHw8YJt3CnYcN-GTEoYjn0jKuBlw8g.vThrkI7WBK5KD8JgP8JnXUahcmEfI2jNZBKxKtq75vog.JPEG.cosmicidea%2F20190910_154744.jpg&type=b400" alt="백년옥"></a>
-                    </td>
-                    <td>
-                        <span class="name">백년옥</span>
-                        <p>📞02-523-2860</p>
-                        <p>🚩서울 서초구 남부순환로 2407 <a href="https://v4.map.naver.com/?mapmode=0&lng=1c0b5437eadd30c698b8a812b2e9aee8&pinId=11678686&pinType=site&lat=d8075f0234d72ebf82fbda0f881910f9&dlevel=11&enc=b64">[지도보기]</a></p>
-                        <p>🕒 평일 10:00 - 21:00<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;명절 휴무</p>
-                        <p>🍴 자연식 순두부: 10,000원<br>
-                            &nbsp;&nbsp;&nbsp;뚝배기 순두부: 10,000원<br>
-                            &nbsp;&nbsp;&nbsp;팥동지죽: 10,000원<br>
-                            &nbsp;&nbsp;&nbsp;팥칼국수: 10,000원<br>
-                            &nbsp;&nbsp;&nbsp;야채두부비빔밥: 10,000원</p>
-                    </td>
-                </tr>
-            </table>
-            <hr class="my-hr">
-        </section>
-
-        <!-- 장꼬방묵은김치찌개전문 -->
-        <section class="sizing" style="width: 70%;">
-            <table>
-                <tr>
-                    <td>
-                        <img class="foodImg" src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxOTA0MDFfMTk5%2FMDAxNTU0MTIzMTU2MzEw.4uUFDWpTDRdOH4Yu0510R-UtzqjEV45HrXyJIup3-04g._2vGDqq1XYFk77hhvrM0WGjsWAYXaDR0JCPUkUh69a4g.JPEG.bp10to70%2FP1090234.JPG&type=b400" alt="장꼬방묵은김치찌개전문">
-                    </td>
-                    <td>
-                        <span class="name">장꼬방묵은김치찌개전문</span>
-                        <p>📞02-522-0035</p>
-                        <p>🚩서울 서초구 효령로 364 <a href="https://v4.map.naver.com/?mapmode=0&lng=7dee4cb6773cf60f2375025d39c4f1939284977543108875e6a0e8e8a5a802d8&pinId=11819292&lat=d0ab45364c8b3880e377474ebacd3ff6cf77eeb01466d5e87de250edcf13d109&dlevel=11&enc=b64&pinType=site">[지도보기]</a></p>
-                        <p>🕒 매일 10:00 - 23:00</p>
-                        <p>🍴 장꼬방찌개: 8,000원<br>
-                            &nbsp;&nbsp;&nbsp;계란말이: 8,000원<br>
-                            &nbsp;&nbsp;&nbsp;장꼬방구이: 9,000원<br>
-                            &nbsp;&nbsp;&nbsp;장꼬방찌개(포장): 7,000원<br>
-                            &nbsp;&nbsp;&nbsp;계란말이(포장): 8,000원</p>
-                    </td>
-                </tr>
-            </table>
-        </section>
-        <button onclick="">추천받기</button>
-    </section>
-
-    <!-- Footer -->
-    <footer class="sizing ft10 center">
-        © 2020 Copyright,
-        Made by <a href="https://github.com/kimkyeongnam" target="_blank"> 김경남</a> & 
-        <a href="https://github.com/khg08071" target="_blank"> 김형규</a>
-         
-    </footer>    
-</body>
+        <!-- Footer -->
+        <footer class="sizing ft10 center copyright">
+            © 2020 Copyright,
+            Made by <a href="https://github.com/kimkyeongnam" target="_blank"> 김경남</a> & 
+            <a href="https://github.com/khg08071" target="_blank"> 김형규</a>
+            <p><a href="https://github.com/kimkyeongnam/PlayData"><button class="github-btn" style="margin-top: 5px;">Let's go Github 🎓</button></a></p>
+        </footer>    
+        <script src="./main.js"></script> 
+    </body>
 
 </html>
