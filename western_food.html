@@ -1,38 +1,83 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width", initial-scale=1.0>
+    <meta name="viewport" content="width=device-width" , initial-scale=1.0>
     <meta http-equiv="X-UA-Compatible" content="chrome">
     <title>양식</title>
     <link rel="stylesheet" href="main.css">
 
 </head>
+
 <body>
     <!-- Header -->
     <header class="sizing">
-        <a href="./표지.html"><img class="playdata" src="playdata_logo.png" alt="playdata_logo"></a> 
+        <a href="./표지.html"><img class="playdata" src="playdata_logo.png" alt="playdata_logo"></a>
     </header>
     <section class="sizing">
         <div class="ft30 foodKinds">양식
             <button onclick="recommendFood()" class="btn">추천받기</button>
             <button onclick="cleaning()" class="btn">원래대로</button>
         </div>
-        
+
         <!-- 오프레 -->
         <section class="sizing" style="width: 70%;" id="food_1">
             <table>
                 <tr>
                     <td>
-                        <img class="foodImg" style="transform: scale(1);" src="https://lh3.googleusercontent.com/proxy/hT3rQYZHzlJCBuy4FUCSNrFN9p-HYYWMwYFTcyupJNaPom7rhmOgV7y1naXNhQECete7gBbJBVv7uMO9aZ_wquZmpDZNwqR-Vp1c8o81NpunRpLhPiwwZxCogXpenNNN2E04v90lmre0fw_gWnGq-yvUVTfMSsC0udg7tXnj" alt="오프레">
+                        <img class="foodImg" style="transform: scale(1);" src="https://lh3.googleusercontent.com/proxy/hT3rQYZHzlJCBuy4FUCSNrFN9p-HYYWMwYFTcyupJNaPom7rhmOgV7y1naXNhQECete7gBbJBVv7uMO9aZ_wquZmpDZNwqR-Vp1c8o81NpunRpLhPiwwZxCogXpenNNN2E04v90lmre0fw_gWnGq-yvUVTfMSsC0udg7tXnj"
+                            alt="오프레">
                     </td>
                     <td>
                         <span class="name">오프레</span>
                         <p>📞010-9081-3837</p>
                         <p>🚩서울 서초구 반포대로4길 12 <a href="https://v4.map.naver.com/?mapmode=0&lng=c7b856937bafdd640c17b14a221cc6e549bf51c2bceffade43d1b5bb6034d0c7&pinId=36061064&lat=e59a81232619807660d6b28fc172328dcf77eeb01466d5e87de250edcf13d109&dlevel=11&enc=b64&pinType=site">[지도보기]</a></p>
                         <p>🕒 매일 12:00 - 22:00<br>&nbsp;&nbsp;&nbsp;&nbsp; Break time 15:00 - 18:00<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;월요일 휴무</p>
-                        <p>🍴 런치코스: 63,000원<br>
-                            &nbsp;&nbsp;&nbsp;디너코스: 138,000원</p>
+                        <p>🍴 런치코스: 63,000원<br> &nbsp;&nbsp;&nbsp;디너코스: 138,000원</p>
+                    </td>
+                    <td>
+                        <div id="map2" style="width:200px;height:200px;border-radius: 10%;"></div>
+
+                        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d395a79258e87d808ee857297c6df7cf&libraries=services"></script>
+                        <script>
+                            var mapContainer = document.getElementById('map2'), // 지도를 표시할 div 
+                                mapOption = {
+                                    center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+                                    level: 4 // 지도의 확대 레벨
+                                };
+
+                            // 지도를 생성합니다    
+                            var map2 = new kakao.maps.Map(mapContainer, mapOption);
+
+                            // 주소-좌표 변환 객체를 생성합니다
+                            var geocoder = new kakao.maps.services.Geocoder();
+
+                            // 주소로 좌표를 검색합니다
+                            geocoder.addressSearch('서울 서초구 반포대로4길 12 ', function(result, status) {
+
+                                // 정상적으로 검색이 완료됐으면 
+                                if (status === kakao.maps.services.Status.OK) {
+
+                                    var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+
+                                    // 결과값으로 받은 위치를 마커로 표시합니다
+                                    var marker = new kakao.maps.Marker({
+                                        map: map2,
+                                        position: coords
+                                    });
+
+                                    // 인포윈도우로 장소에 대한 설명을 표시합니다
+                                    var infowindow = new kakao.maps.InfoWindow({
+                                        content: '<div style="width:150px;text-align:center;padding:6px 0;">오프레</div>'
+                                    });
+                                    infowindow.open(map2, marker);
+
+                                    // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+                                    map2.setCenter(coords);
+                                }
+                            });
+                        </script>
                     </td>
                 </tr>
             </table>
@@ -43,18 +88,58 @@
             <table>
                 <tr>
                     <td>
-                        <a href="http://www.simpatia.kr/"><img class="foodImg" src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxOTA2MDRfMTYy%2FMDAxNTU5NjMzNDUyODky.8p4pxjkq4pXokukT3qhVwHxLckyQgcc-iCRbEoZwruUg.MvC4ds-oK1Ht2r7SYWQMbfSTLNq6TukOUzlVLnaT4Hwg.JPEG.glass-garden%2F20190604120402_IMG_0022.JPG&type=b400" alt="심빠띠아"></a>
+                        <a href="http://www.simpatia.kr/"><img class="foodImg" src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxOTA2MDRfMTYy%2FMDAxNTU5NjMzNDUyODky.8p4pxjkq4pXokukT3qhVwHxLckyQgcc-iCRbEoZwruUg.MvC4ds-oK1Ht2r7SYWQMbfSTLNq6TukOUzlVLnaT4Hwg.JPEG.glass-garden%2F20190604120402_IMG_0022.JPG&type=b400"
+                                alt="심빠띠아"></a>
                     </td>
                     <td>
                         <span class="name">심빠띠아</span>
                         <p>📞02-3474-6655</p>
                         <p>🚩서울 서초구 반포대로16길 30 <a href="https://v4.map.naver.com/?mapmode=0&lng=4c57d350b433fdf19f5cfa2016be04a3&pinId=36395044&pinType=site&lat=4221050ae50a1837919d8b5e61cbbbd9&dlevel=11&enc=b64">[지도보기]</a></p>
                         <p>🕒 평일 11:30 - 22:30<br>&nbsp;&nbsp;&nbsp;&nbsp; 주말 11:30 - 22:00<br>&nbsp;&nbsp;&nbsp;&nbsp; Break time 15:30 - 16:30<br>&nbsp;&nbsp;&nbsp;&nbsp; 일요일 휴무</p>
-                        <p>🍴 까르보나라: 17,000원<br>
-                            &nbsp;&nbsp;&nbsp;아라비아따: 17,000원<br>
-                            &nbsp;&nbsp;&nbsp;크림디아볼라: 20,000원<br>
-                            &nbsp;&nbsp;&nbsp;봉골레 파스타: 19,000원<br>
-                            &nbsp;&nbsp;&nbsp;고르곤졸라 피자: 20,000원</p>
+                        <p>🍴 까르보나라: 17,000원<br> &nbsp;&nbsp;&nbsp;아라비아따: 17,000원<br> &nbsp;&nbsp;&nbsp;크림디아볼라: 20,000원<br> &nbsp;&nbsp;&nbsp;봉골레 파스타: 19,000원<br> &nbsp;&nbsp;&nbsp;고르곤졸라 피자: 20,000원</p>
+                    </td>
+                    <td>
+                        <div id="map1" style="width:200px;height:200px;border-radius: 10%;"></div>
+
+                        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d395a79258e87d808ee857297c6df7cf&libraries=services"></script>
+                        <script>
+                            var mapContainer = document.getElementById('map1'), // 지도를 표시할 div 
+                                mapOption = {
+                                    center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+                                    level: 4 // 지도의 확대 레벨
+                                };
+
+                            // 지도를 생성합니다    
+                            var map1 = new kakao.maps.Map(mapContainer, mapOption);
+
+                            // 주소-좌표 변환 객체를 생성합니다
+                            var geocoder = new kakao.maps.services.Geocoder();
+
+                            // 주소로 좌표를 검색합니다
+                            geocoder.addressSearch('서울 서초구 반포대로16길 30 ', function(result, status) {
+
+                                // 정상적으로 검색이 완료됐으면 
+                                if (status === kakao.maps.services.Status.OK) {
+
+                                    var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+
+                                    // 결과값으로 받은 위치를 마커로 표시합니다
+                                    var marker = new kakao.maps.Marker({
+                                        map: map1,
+                                        position: coords
+                                    });
+
+                                    // 인포윈도우로 장소에 대한 설명을 표시합니다
+                                    var infowindow = new kakao.maps.InfoWindow({
+                                        content: '<div style="width:150px;text-align:center;padding:6px 0;">심빠띠아</div>'
+                                    });
+                                    infowindow.open(map1, marker);
+
+                                    // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+                                    map1.setCenter(coords);
+                                }
+                            });
+                        </script>
                     </td>
                 </tr>
             </table>
@@ -72,11 +157,50 @@
                         <p>📞02-521-3325</p>
                         <p>🚩서울 서초구 반포대로 8 <a href="https://v4.map.naver.com/?mapmode=0&lng=32be05d711b145dd5888075096f7563f9284977543108875e6a0e8e8a5a802d8&pinId=37086581&lat=c62db68b7576f7c2409946c5282ff0e4&dlevel=11&enc=b64&pinType=site">[지도보기]</a></p>
                         <p>🕒 매일 11:00 - 24:00</p>
-                        <p>🍴 마르게리따 피자: 18,000원<br>
-                            &nbsp;&nbsp;&nbsp;샐러드류: 18,000~20,000원<br>
-                            &nbsp;&nbsp;&nbsp;마레 파스타: 20,000원<br>
-                            &nbsp;&nbsp;&nbsp;연어 아스파라거스: 19,000원<br>
-                            &nbsp;&nbsp;&nbsp;까르보나라: 19,000원</p>
+                        <p>🍴 마르게리따 피자: 18,000원<br> &nbsp;&nbsp;&nbsp;샐러드류: 18,000~20,000원<br> &nbsp;&nbsp;&nbsp;마레 파스타: 20,000원<br> &nbsp;&nbsp;&nbsp;연어 아스파라거스: 19,000원<br> &nbsp;&nbsp;&nbsp;까르보나라: 19,000원</p>
+                    </td>
+                    <td>
+                        <div id="map0" style="width:200px;height:200px;border-radius: 10%;"></div>
+
+                        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d395a79258e87d808ee857297c6df7cf&libraries=services"></script>
+                        <script>
+                            var mapContainer = document.getElementById('map0'), // 지도를 표시할 div 
+                                mapOption = {
+                                    center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+                                    level: 4 // 지도의 확대 레벨
+                                };
+
+                            // 지도를 생성합니다    
+                            var map0 = new kakao.maps.Map(mapContainer, mapOption);
+
+                            // 주소-좌표 변환 객체를 생성합니다
+                            var geocoder = new kakao.maps.services.Geocoder();
+
+                            // 주소로 좌표를 검색합니다
+                            geocoder.addressSearch('서울 서초구 반포대로 8 ', function(result, status) {
+
+                                // 정상적으로 검색이 완료됐으면 
+                                if (status === kakao.maps.services.Status.OK) {
+
+                                    var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+
+                                    // 결과값으로 받은 위치를 마커로 표시합니다
+                                    var marker = new kakao.maps.Marker({
+                                        map: map0,
+                                        position: coords
+                                    });
+
+                                    // 인포윈도우로 장소에 대한 설명을 표시합니다
+                                    var infowindow = new kakao.maps.InfoWindow({
+                                        content: '<div style="width:150px;text-align:center;padding:6px 0;">라칼라스</div>'
+                                    });
+                                    infowindow.open(map0, marker);
+
+                                    // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+                                    map0.setCenter(coords);
+                                }
+                            });
+                        </script>
                     </td>
                 </tr>
             </table>
@@ -87,18 +211,58 @@
             <table>
                 <tr>
                     <td>
-                        <a href="http://hailartrestaurant.modoo.at/"><img class="foodImg" src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxODA0MjJfMTQz%2FMDAxNTI0NDA1MjA3NTky.ZrjNJR9NCKWkiScU2zgdWZ5syDEYxbVyB0i_6C-0MCYg.0hWeukA5zA__Li7IYkSKPq9qYp1X8-BCCPA_8ru-Bq8g.JPEG.baby100100%2FattachImage_2880958879.jpeg&type=b400" alt="하일아트레스토랑"></a>
+                        <a href="http://hailartrestaurant.modoo.at/"><img class="foodImg" src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxODA0MjJfMTQz%2FMDAxNTI0NDA1MjA3NTky.ZrjNJR9NCKWkiScU2zgdWZ5syDEYxbVyB0i_6C-0MCYg.0hWeukA5zA__Li7IYkSKPq9qYp1X8-BCCPA_8ru-Bq8g.JPEG.baby100100%2FattachImage_2880958879.jpeg&type=b400"
+                                alt="하일아트레스토랑"></a>
                     </td>
                     <td>
                         <span class="name">하일아트레스토랑</span>
                         <p>📞02-3471-1727</p>
                         <p>🚩서울 서초구 반포대로4길 54 <a href="https://v4.map.naver.com/?mapmode=0&lng=eb2f46dc49c6f7c9ede0e16317d6a7597defdf432d5fa6c24f028e8cd18fb974&pinId=11845261&pinType=site&lat=a44d76b7d9ad8b395fa6cfaca86f363d49bf51c2bceffade43d1b5bb6034d0c7&dlevel=11&enc=b64">[지도보기]</a></p>
                         <p>🕒 매일 11:30 - 22:00<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Break time 15:00 - 16:00(음료만 주문가능)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;일요일 휴무</p>
-                        <p>🍴 명란 파스타: 18,000원<br>
-                            &nbsp;&nbsp;&nbsp;마르게리따 피자: 17,000원<br>
-                            &nbsp;&nbsp;&nbsp;등심 스테이크: 35,000원<br>
-                            &nbsp;&nbsp;&nbsp;안심 스테이크: 49,000원<br>
-                            &nbsp;&nbsp;&nbsp;[런치메뉴] 함박스테이크: 12,000원</p>
+                        <p>🍴 명란 파스타: 18,000원<br> &nbsp;&nbsp;&nbsp;마르게리따 피자: 17,000원<br> &nbsp;&nbsp;&nbsp;등심 스테이크: 35,000원<br> &nbsp;&nbsp;&nbsp;안심 스테이크: 49,000원<br> &nbsp;&nbsp;&nbsp;[런치메뉴] 함박스테이크: 12,000원</p>
+                    </td>
+                    <td>
+                        <div id="map" style="width:200px;height:200px;border-radius: 10%;"></div>
+
+                        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d395a79258e87d808ee857297c6df7cf&libraries=services"></script>
+                        <script>
+                            var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+                                mapOption = {
+                                    center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+                                    level: 4 // 지도의 확대 레벨
+                                };
+
+                            // 지도를 생성합니다    
+                            var map = new kakao.maps.Map(mapContainer, mapOption);
+
+                            // 주소-좌표 변환 객체를 생성합니다
+                            var geocoder = new kakao.maps.services.Geocoder();
+
+                            // 주소로 좌표를 검색합니다
+                            geocoder.addressSearch('서울 서초구 반포대로4길 54  ', function(result, status) {
+
+                                // 정상적으로 검색이 완료됐으면 
+                                if (status === kakao.maps.services.Status.OK) {
+
+                                    var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+
+                                    // 결과값으로 받은 위치를 마커로 표시합니다
+                                    var marker = new kakao.maps.Marker({
+                                        map: map,
+                                        position: coords
+                                    });
+
+                                    // 인포윈도우로 장소에 대한 설명을 표시합니다
+                                    var infowindow = new kakao.maps.InfoWindow({
+                                        content: '<div style="width:150px;text-align:center;padding:6px 0;">하일아트레스토랑</div>'
+                                    });
+                                    infowindow.open(map, marker);
+
+                                    // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+                                    map.setCenter(coords);
+                                }
+                            });
+                        </script>
                     </td>
                 </tr>
             </table>
@@ -106,15 +270,14 @@
         <article class="sizing ft10 right">
             <a href="http://data.seocho.go.kr/openinf/sheetview.jsp?infId=OA-11064&tMenu=11">[출처] 열린데이터광장: 식품위생관리-서울시 서초구 모법음식점 지정 현황</a>
         </article>
-        
+
         <!-- Footer -->
         <footer class="sizing ft10 center copyright">
-            © 2020 Copyright,
-            Made by <a href="https://github.com/kimkyeongnam" target="_blank"> 김경남</a> & 
+            © 2020 Copyright, Made by <a href="https://github.com/kimkyeongnam" target="_blank"> 김경남</a> &
             <a href="https://github.com/khg08071" target="_blank"> 김형규</a>
             <p><a href="https://github.com/kimkyeongnam/PlayData"><button class="github-btn" style="margin-top: 5px;">Let's go Github 🎓</button></a></p>
-        </footer>    
-        <script src="./main.js"></script> 
-    </body>
+        </footer>
+        <script src="./main.js"></script>
+</body>
 
 </html>
