@@ -17,7 +17,7 @@
 
 <br><br><br>
 
-## 1. Directory/File Structure Diagram
+## 1. File Directory
 ```
 .
 ├── img               # restaurant images
