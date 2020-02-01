@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PlayData_맛집추천</title>
+    <link rel="stylesheet" href="표지.css">
+</head>
+
+<body>
+    <div class="all">
+        <div class="top">
+            <span style="background-color: rgb(44, 113, 136);   ">
+            PlayData_맛집추천</span><br>
+            <span>
+            <input type="button" onclick="random()" value="전체 추천 받기" style="opacity: 0.5;"></span>
+            <br>
+            <br>
+            <form action="https://map.kakao.com/?TYPE_MAP&" target="_blank">
+                <span style="font-size: 20px;"> 맛집을 검색하세요 : </span>
+                <input type="text" name="q">
+                <input type="submit" value="검색" style="opacity: 0.5;"> </form>
+        </div>
+        <div class="left">
+            <span>한식</span>
+            <br>
+            <br><br><br><br><br>
+            <a href="korean_food.html">
+                <input type="button" onclick="" value="한식 선택" style="opacity: 0.5;">
+            </a>
+        </div>
+
+        <div class="center">
+            <span style="background-color: rgba(211, 211, 211, 0.76); opacity: 0.7;">일식</span>
+            <br>
+            <br><br><br><br><br>
+            <a href="japanese_food.html">
+                <input type="button" onclick="" value="일식 선택" style="opacity: 0.5;">
+            </a>
+        </div>
+        <div class="rightcenter">
+            <span style="background-color: whitesmoke; opacity: 0.5;">양식</span>
+            <br>
+            <br><br><br><br><br>
+            <a href="western_food.html">
+                <input type="button" onclick="" value="양식 선택" style="opacity: 0.5;">
+            </a>
+        </div>
+        <div class="right">중식
+            <br>
+            <br><br><br><br><br>
+            <a href="chinese_food.html">
+                <input type="button" onclick="" value="중식 선택" style="opacity: 0.5;">
+            </a>
+        </div>
+        <footer style="clear:left; font-size: 10px; text-align: center; margin: auto;
+        width: 100%; background-color: rgb(170, 196, 211);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px; ">
+            © 2020 Copyright, Made by <a href="https://github.com/kimkyeongnam" target="_blank"> 김경남</a> &
+            <a href="https://github.com/khg08071" target="_blank"> 김형규</a>
+            <p><a href="https://github.com/kimkyeongnam/PlayData"><button class="github-btn" style="margin-top: 5px;">Let's go Github 🎓</button></a></p>
+        </footer>
+    </div>
+    <script src="random.js"></script>
+</body>
+
+</html>
