@@ -71,4 +71,4 @@ FAQ is operated by [Issue #5](https://github.com/study-front-back/PlayData/issue
 |김경남|[@kimkyeongnam](https://github.com/kimkyeongnam)|kkyy0126@naver.com|
 |김형규|[@khg08071](https://github.com/khg08071)||
 
-Please leave a comment on [Issue #5](https://github.com/study-front-back/PlayData/issues/5) about the operation of the repository and any questions.
+Please leave comments on [Issue #5](https://github.com/study-front-back/PlayData/issues/5) about the operation of this repository and any questions.
