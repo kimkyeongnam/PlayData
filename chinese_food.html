@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" , initial-scale=1.0>
+    <meta http-equiv="X-UA-Compatible" content="chrome">
+    <title>중식</title>
+    <link rel="stylesheet" href="main.css">
+
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="sizing">
+        <a href="./표지.html"><img class="playdata" src="playdata_logo.png" alt="playdata_logo"></a>
+    </header>
+    <section class="sizing">
+        <div class="ft30 foodKinds">중식
+            <button onclick="recommendFood()" class="btn">추천받기</button>
+            <button onclick="cleaning()" class="btn">원래대로</button>
+        </div>
+
+        <!-- 딘타이펑 강남점 -->
+        <section class="sizing" style="width: 70%;" id="food_1">
+            <table>
+                <tr>
+                    <td style="width: 30%;">
+                        <a href="http://www.dintaifung.co.kr/"><img class="foodImg" src="./img/cha1.jpeg"
+                                alt="딘타이펑 강남점"></a>
+                    </td>
+                    <td style="width: 50%; padding-left: 60px;">
+                        <span class="name">딘타이펑 강남점</span>
+                        <p>📞02-569-2778</p>
+                        <p>🚩서울 서초구 서초대로73길 12</p>
+                        <p>🕒 매일 11:00 - 22:00<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Last order - 21:10</p>
+                        <p>🍴 샤오롱바오 10개: 10,500원<br> &nbsp;&nbsp;&nbsp;새우샤오마이 10개: 14,000원<br> &nbsp;&nbsp;&nbsp;꿔바로우
+                            (중): 28,000원<br> &nbsp;&nbsp;&nbsp;우육면: 14,000원<br> &nbsp;&nbsp;&nbsp;XO게살볶음밥: 10,500원</p>
+                    </td>
+                    <td style="width: 20%;">
+                        <div id="map2" style="width:200px;height:200px;border-radius: 10%;"></div>
+
+                        <script type="text/javascript"
+                            src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d395a79258e87d808ee857297c6df7cf&libraries=services"></script>
+                        <script>
+                            var mapContainer = document.getElementById('map2'), // 지도를 표시할 div 
+                                mapOption = {
+                                    center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+                                    level: 4 // 지도의 확대 레벨
+                                };
+
+                            // 지도를 생성합니다    
+                            var map2 = new kakao.maps.Map(mapContainer, mapOption);
+
+                            // 주소-좌표 변환 객체를 생성합니다
+                            var geocoder = new kakao.maps.services.Geocoder();
+
+                            // 주소로 좌표를 검색합니다
+                            geocoder.addressSearch('서울 서초구 서초대로73길 12', function (result, status) {
+
+                                // 정상적으로 검색이 완료됐으면 
+                                if (status === kakao.maps.services.Status.OK) {
+
+                                    var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+
+                                    // 결과값으로 받은 위치를 마커로 표시합니다
+                                    var marker = new kakao.maps.Marker({
+                                        map: map2,
+                                        position: coords
+                                    });
+
+                                    // 인포윈도우로 장소에 대한 설명을 표시합니다
+                                    var infowindow = new kakao.maps.InfoWindow({
+                                        content: '<div style="width:150px;text-align:center;padding:6px 0;">딘타이펑</div>'
+                                    });
+                                    infowindow.open(map2, marker);
+
+                                    // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+                                    map2.setCenter(coords);
+                                }
+                            });
+                        </script>
+                    </td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- 하이디라오 서초지점 -->
+        <section class="sizing" style="width: 70%;" id="food_2">
+            <table>
+                <tr>
+                    <td style="width: 30%;">
+                        <a href="https://www.facebook.com/HaidilaoKorea/"><img class="foodImg" src="./img/cha2.jpg"
+                                alt="하이디라오 서초지점"></a>
+                    </td>
+                    <td style="width: 50%; padding-left: 60px;">
+                        <span class="name">하이디라오 서초지점</span>
+                        <p>📞02-533-8260</p>
+                        <p>🚩서울 서초구 서초대로77길 54</p>
+                        <p>🕒 매일 10:00 - 09:00(익일)</p>
+                        <p>🍴 하이디라오 강남점 세트메뉴: 변동<br> &nbsp;&nbsp;&nbsp;미니팟(마라/삼선/버섯/토마토중 1): 6,000원<br>
+                            &nbsp;&nbsp;&nbsp;한가지맛-마라탕: 24,000원<br> &nbsp;&nbsp;&nbsp;한가지맛(삼선/토마토/버섯 중1): 18,000원<br>
+                            &nbsp;&nbsp;&nbsp;두가지맛(4가지 탕 중 선택2): 18,000원</p>
+                    </td>
+                    <td style="width: 20%;">
+                        <div id="map1" style="width:200px;height:200px;border-radius: 10%;"></div>
+
+                        <script type="text/javascript"
+                            src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d395a79258e87d808ee857297c6df7cf&libraries=services"></script>
+                        <script>
+                            var mapContainer = document.getElementById('map1'), // 지도를 표시할 div 
+                                mapOption = {
+                                    center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+                                    level: 4 // 지도의 확대 레벨
+                                };
+
+                            // 지도를 생성합니다    
+                            var map1 = new kakao.maps.Map(mapContainer, mapOption);
+
+                            // 주소-좌표 변환 객체를 생성합니다
+                            var geocoder = new kakao.maps.services.Geocoder();
+
+                            // 주소로 좌표를 검색합니다
+                            geocoder.addressSearch('서울 서초구 서초대로77길 54 서초w타워 2층', function (result, status) {
+
+                                // 정상적으로 검색이 완료됐으면 
+                                if (status === kakao.maps.services.Status.OK) {
+
+                                    var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+
+                                    // 결과값으로 받은 위치를 마커로 표시합니다
+                                    var marker = new kakao.maps.Marker({
+                                        map: map1,
+                                        position: coords
+                                    });
+
+                                    // 인포윈도우로 장소에 대한 설명을 표시합니다
+                                    var infowindow = new kakao.maps.InfoWindow({
+                                        content: '<div style="width:150px;text-align:center;padding:6px 0;">하이디라오</div>'
+                                    });
+                                    infowindow.open(map1, marker);
+
+                                    // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+                                    map1.setCenter(coords);
+                                }
+                            });
+                        </script>
+                    </td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- 모던눌랑 센트럴시티점 -->
+        <section class="sizing" style="width: 70%;" id="food_3">
+            <table>
+                <tr>
+                    <td style="width: 30%;">
+                        <a href="http://www.modernnulang.com/"><img class="foodImg" src="./img/cha3.png"
+                                alt="모던눌랑 센트럴시티점"></a>
+                    </td>
+                    <td style="width: 50%; padding-left: 60px;">
+                        <span class="name">모던눌랑 센트럴시티점</span>
+                        <p>📞02-6282-5005</p>
+                        <p>🚩서울 서초구 사평대로 205</p>
+                        <p>🕒 매일 11:30 - 22:00</p>
+                        <p>🍴 모던눌랑케이지: 32,000원<br> &nbsp;&nbsp;&nbsp;모던눌랑 상하이롤 플래터: 32,000원<br> &nbsp;&nbsp;&nbsp;스파이시
+                            칠리 갈릭 비프: 45,000원<br> &nbsp;&nbsp;&nbsp;민트&라임 슈림프: 36,000원<br> &nbsp;&nbsp;&nbsp;상하이 핑크:
+                            12,000원</p>
+                    </td>
+                    <td style="width: 20%;">
+                        <div id="map0" style="width:200px;height:200px;border-radius: 10%;"></div>
+
+                        <script type="text/javascript"
+                            src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d395a79258e87d808ee857297c6df7cf&libraries=services"></script>
+                        <script>
+                            var mapContainer = document.getElementById('map0'), // 지도를 표시할 div 
+                                mapOption = {
+                                    center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+                                    level: 4 // 지도의 확대 레벨
+                                };
+
+                            // 지도를 생성합니다    
+                            var map0 = new kakao.maps.Map(mapContainer, mapOption);
+
+                            // 주소-좌표 변환 객체를 생성합니다
+                            var geocoder = new kakao.maps.services.Geocoder();
+
+                            // 주소로 좌표를 검색합니다
+                            geocoder.addressSearch('서울 서초구 사평대로 205', function (result, status) {
+
+                                // 정상적으로 검색이 완료됐으면 
+                                if (status === kakao.maps.services.Status.OK) {
+
+                                    var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+
+                                    // 결과값으로 받은 위치를 마커로 표시합니다
+                                    var marker = new kakao.maps.Marker({
+                                        map: map0,
+                                        position: coords
+                                    });
+
+                                    // 인포윈도우로 장소에 대한 설명을 표시합니다
+                                    var infowindow = new kakao.maps.InfoWindow({
+                                        content: '<div style="width:150px;text-align:center;padding:6px 0;">모던눌랑 센트럴시티점</div>'
+                                    });
+                                    infowindow.open(map0, marker);
+
+                                    // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+                                    map0.setCenter(coords);
+                                }
+                            });
+                        </script>
+                    </td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- 한성양꼬치 -->
+        <section class="sizing" style="width: 70%;" id="food_4">
+            <table>
+                <tr>
+                    <td style="width: 30%;">
+                        <img class="foodImg" src="./img/cha4.jpg" alt="한성양꼬치">
+                    </td>
+                    <td style="width: 50%; padding-left: 60px;">
+                        <span class="name">한성양꼬치</span>
+                        <p>📞02-586-8892</p>
+                        <p>🚩서울 서초구 반포대로28길 71-18</p>
+                        <p>🕒 평일 12:00 - 24:00<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;주말 14:00 - 22:00</p>
+                        <p>🍴 통갈비: 48,000원<br> &nbsp;&nbsp;&nbsp;고급양갈비: 29,000원<br> &nbsp;&nbsp;&nbsp;양꼬치: 13,000원<br>
+                            &nbsp;&nbsp;&nbsp;향라대하: 28,000원<br> &nbsp;&nbsp;&nbsp;꿔보로: 18,000원</p>
+                    </td>
+                    <td style="width: 20%;">
+                        <div id="map" style="width:200px;height:200px;border-radius: 10%;"></div>
+
+                        <script type="text/javascript"
+                            src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d395a79258e87d808ee857297c6df7cf&libraries=services"></script>
+                        <script>
+                            var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+                                mapOption = {
+                                    center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+                                    level: 4 // 지도의 확대 레벨
+                                };
+
+                            // 지도를 생성합니다    
+                            var map = new kakao.maps.Map(mapContainer, mapOption);
+
+                            // 주소-좌표 변환 객체를 생성합니다
+                            var geocoder = new kakao.maps.services.Geocoder();
+
+                            // 주소로 좌표를 검색합니다
+                            geocoder.addressSearch('서울 서초구 반포대로28길 71-18 ', function (result, status) {
+
+                                // 정상적으로 검색이 완료됐으면 
+                                if (status === kakao.maps.services.Status.OK) {
+
+                                    var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+
+                                    // 결과값으로 받은 위치를 마커로 표시합니다
+                                    var marker = new kakao.maps.Marker({
+                                        map: map,
+                                        position: coords
+                                    });
+
+                                    // 인포윈도우로 장소에 대한 설명을 표시합니다
+                                    var infowindow = new kakao.maps.InfoWindow({
+                                        content: '<div style="width:150px;text-align:center;padding:6px 0;">한성양꼬치</div>'
+                                    });
+                                    infowindow.open(map, marker);
+
+                                    // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+                                    map.setCenter(coords);
+                                }
+                            });
+                        </script>
+                    </td>
+                </tr>
+            </table>
+        </section>
+    </section>
+    <article class="sizing ft10 right">
+        <a href="http://data.seocho.go.kr/openinf/sheetview.jsp?infId=OA-11064&tMenu=11">[출처] 열린데이터광장: 식품위생관리-서울시 서초구
+            모법음식점 지정 현황</a>
+    </article>
+
+    <!-- Footer -->
+    <footer class="sizing ft10 center copyright">
+        © 2020 Copyright, Made by <a href="https://github.com/kimkyeongnam" target="_blank"> 김경남</a> &
+        <a href="https://github.com/khg08071" target="_blank"> 김형규</a>
+        <p><a href="https://github.com/kimkyeongnam/PlayData"><button class="github-btn" style="margin-top: 5px;">Let's
+                    go Github 🎓</button></a></p>
+    </footer>
+    <script src="./main.js"></script>
+</body>
+
+</html>
