@@ -83,3 +83,17 @@
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
+
+
+/* Github Button */
+.github-btn{
+    width: 150px;
+    height: 40px;
+    background-color: rgb(126, 126, 128);
+    color: white;
+    border-radius: 5px;
+    display: inline-block;
+    border-style: double;
+    text-decoration: none;
+    cursor: pointer;
+}
